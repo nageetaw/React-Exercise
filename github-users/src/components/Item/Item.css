@@ -1,0 +1,13 @@
+.userImage{
+    width: 200px;
+    height: 200px;
+
+}
+
+.itemCard{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    padding: 4px;
+    border-color: 2px solid black;
+    width: min-content;
+    margin: 10px 0 0 10px;
+}
