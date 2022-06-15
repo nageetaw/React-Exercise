@@ -40,10 +40,8 @@ const List = ({ filteredUsers }) => {
       "JSON"
     );
     if (response) {
-      console.log(response);
       setSelectedUser(response);
       openModal();
-      console.log(modalIsOpen);
     } else console.log("error");
   };
   return (

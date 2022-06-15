@@ -1,7 +1,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import apiCallHandler from "../../components/apiCalls/apiCallHandler";
 
-
 export const loadAllUsers = createAsyncThunk(`user/getAllUsers`, async () => {
   const response = await apiCallHandler(
     "https://api.github.com/users",
@@ -9,7 +8,7 @@ export const loadAllUsers = createAsyncThunk(`user/getAllUsers`, async () => {
     "GET",
     "JSON"
   );
-  console.log(response);
+  // console.log(response);
   return response;
 });
 
