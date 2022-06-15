@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import Modal from "react-modal";
-
+import "./modal.css";
 const customStyles = {
   content: {
     top: "50%",
@@ -13,35 +13,29 @@ const customStyles = {
   },
 };
 
-Modal.setAppElement("#yourAppElement");
-
-const UserDetailModal = () => {
-  let subtitle;
-  const [modalIsOpen, setIsOpen] = React.useState(false);
-
-  function openModal() {
-    setIsOpen(true);
-  }
-
-  function afterOpenModal() {
-    // references are now sync'd and can be accessed.
-    subtitle.style.color = "#f00";
-  }
-
-  function closeModal() {
-    setIsOpen(false);
-  }
-
+const UserDetailModal = ({
+  openModal,
+  modalIsOpen,
+  closeModal,
+  userDetail,
+}) => {
   return (
     <div>
-      <button onClick={openModal}>Open Modal</button>
       <Modal
         isOpen={modalIsOpen}
-        onAfterOpen={afterOpenModal}
         onRequestClose={closeModal}
         style={customStyles}
-        contentLabel="Example Modal"
-      ></Modal>
+        contentLabel="User Detail"
+      >
+        <button className="closeButton" onClick={closeModal}>
+          close
+        </button>
+        <h1>{userDetail.name}</h1>
+        <img src={userDetail.avatar_url} width={"300px"} height={"300px"} />
+        <p>Followers : {userDetail.followers}</p>
+        <p>Followers : {userDetail.following}</p>
+        <p>Location : {userDetail.location}</p>
+      </Modal>
     </div>
   );
 };

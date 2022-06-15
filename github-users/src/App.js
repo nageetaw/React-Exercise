@@ -1,13 +1,12 @@
-import React from "react";
-import InputField from "./components/Input/InputField";
-import List from "./components/List/List";
+import React, { useEffect, useState } from "react";
+import { Provider } from "react-redux";
+import Home from "./pages/Home";
+import store from "./redux/store";
 function App() {
   return (
-    <div>
-      <h1>Github Users</h1>
-      <InputField />
-      <List />
-    </div>
+    <Provider store={store}>
+      <Home />
+    </Provider>
   );
 }
 

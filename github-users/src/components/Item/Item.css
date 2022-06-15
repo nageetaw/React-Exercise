@@ -6,8 +6,17 @@
 
 .itemCard{
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    padding: 4px;
+    padding: 8px;
     border-color: 2px solid black;
     width: min-content;
     margin: 10px 0 0 10px;
+    display: inline-block;
+  
+}
+.userName{
+    text-align: center;
+    font-size: large;
+    color:cadetblue;
+    cursor: pointer;
+
 }
